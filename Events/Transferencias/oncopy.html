@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 200vh;
+        }
+    </style>
+</head>
+<body oncopy="debug(event)">
+    <p oncopy="debug(event)">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis cumque temporibus ad doloribus voluptates ea nihil tenetur ratione totam veniam provident optio, placeat quis reiciendis explicabo accusantium. Temporibus, cum magni.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis cumque temporibus ad doloribus voluptates ea nihil tenetur ratione totam veniam provident optio, placeat quis reiciendis explicabo accusantium. Temporibus, cum magni.</p>
+    <p>PARA ACONTECER A FUNCAO <span style="font-size: 12px;">ONCUPY</span> CONSOLE</p>
+    <script>
+        function Cancel(e){
+            e.preventDefault();
+        };
+        function debug(e){
+            e.stopPropagation;
+            console.log("Evento: " + e.type)
+
+        };
+    </script>
+</body>
+</html>

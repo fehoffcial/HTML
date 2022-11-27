@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #drag{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin-bottom: 2px;
+        }
+        #drags{
+            width: 200px;
+            height: 200px;
+            border: red 2px solid;
+        }
+    </style>
+</head>
+    <div id="drag" ondrag="degub(event)" ondragstart="debug(event)"  ondragend="debug(event)" draggable="true">
+    </div>
+    <div id="drags" ondragenter="debug(event)" ondrop="debug(event)" ondragover="Cancel(event)" ondragleave="debug(event)"></div>
+    <p>PARA ACONTECER A FUNCAO <span style="font-size: 12px;">ONDROP</span> CONSOLE</p>
+    <script>
+        function Cancel(e){
+            e.preventDefault();
+        };
+        function debug(e){
+            e.stopPropagation;
+            console.log("Evento: " + e.type)
+
+        };
+    </script>
+</body>
+</html>

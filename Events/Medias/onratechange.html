@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 200vh;
+        }
+        video{
+            width: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <select onchange="setRage(event)">
+        <option>0.25</option>
+        <option>0.50</option>
+        <option>0.75</option>
+        <option selected>0.00</option>
+        <option>1.25</option>
+        <option>1.50</option>
+        <option>1.75</option>
+        <option>2.00</option>
+    </select>
+    <video src="/Course/HTML/Tags/AV1_trailer.mp4" controls onprogress="debug(event)" onplaying="debug(event)" onplay="debug(event)" onpause="debug(event)" onloadstart="debug(event)" onloadedmetadata="debug(event)" onloadeddata="debug(event)" oncanplay="debug(event)" ondurationchange="debug(event)" onratechange="debug(event)"></video>
+    <audio src="/Course/HTML/Tags/AV1_trailer.mp4" controls onprogress="debug(event)" onplaying="debug(event)" onplay="debug(event)" onpause="debug(event)" onloadstart="debug(event)" onloadedmetadata="debug(event)" onloadeddata="debug(event)" oncanplay="debug(event)" ondurationchange="debug(event)" onratechange="debug(event)"></audio>
+    <p>PARA ACONTECER A FUNCAO <span style="font-size: 12px;">ONRATACHANGE</span> CONSOLE</p>
+    <script>
+        function Cancel(e) {
+            e.preventDefault();
+        };
+        function debug(e) {
+            e.stopPropagation;
+            console.log("Evento: " + e.type)
+
+        };
+        function setRage(e) {
+            const videoGet = document.querySelector("video");
+            const audioGet = document.querySelector("audio");
+            const valueVideo = e.target.value;
+            videoGet.playbackRate = parseFloat(valueVideo);
+            const valueAudio = e.target.value;
+            audioGet.playbackRate = parseFloat(valueAudio);
+            console.log(e.target.value)
+        }
+    </script>
+</body>
+</html>

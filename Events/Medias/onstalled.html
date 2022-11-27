@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 200vh;
+        }
+        video{
+            width: 80vh;
+        }
+    </style>
+</head>
+<body>
+    <video src="/Course/HTML/Tags/AV1_trailer.mp4" controls onprogress="debug(event)" onplaying="debug(event)" onplay="debug(event)" onpause="debug(event)" onloadstart="debug(event)" onloadedmetadata="debug(event)" onloadeddata="debug(event)" oncanplay="debug(event)" ondurationchange="debug(event)" onratechange="debug(event)" onseeked="debug(event)" onseeking="debug(event)" onstalled="debug(event)"></video>
+    <audio src="/Course/HTML/Tags/AV1_trailer.mp4" controls onprogress="debug(event)" onplaying="debug(event)" onplay="debug(event)" onpause="debug(event)" onloadstart="debug(event)" onloadedmetadata="debug(event)" onloadeddata="debug(event)" oncanplay="debug(event)" ondurationchange="debug(event)" onratechange="debug(event)" onseeked="debug(event)" onseeking="debug(event)" onstalled="debug(event)"></audio>
+    <p>PARA ACONTECER A FUNCAO <span style="font-size: 12px;">ONSTALLED</span> CONSOLE</p>
+    <script>
+        function Cancel(e) {
+            e.preventDefault();
+        };
+        function debug(e) {
+            e.stopPropagation;
+            console.log("Evento: " + e.type)
+        };
+    </script>
+</body>
+</html>

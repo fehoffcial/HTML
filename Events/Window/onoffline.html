@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ononline="debug(event)" onoffline="debug(event)">
+    <p>DESLIGA E LIGAR A INTERNET PARA FUNCAO FUNCIONAR !!!</p>
+    <p>PARA ACONTECER A FUNCAO <span style="font-size: 12px;">ONOFFLINE</span> CONSOLE</p>
+    <script>
+        function debug(e){
+            console.log("Evento: " + e.type)
+            alert("Evento: " + e.type)
+        };
+    </script>
+</body>
+</html>
