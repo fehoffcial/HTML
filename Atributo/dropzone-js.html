@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .drop{
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <button id="OS" class="btn" type="button" draggable="true">OK</button>
+    <div class="drop" dropzone="copy"></div>
+    <script>
+        const botao = document.querySelectorAll(".btn");
+        const dropzone = document.querySelector("[dropzone]");
+            botao.forEach(btnEl => {
+                btnEl.addEventListener("dragstart", btne => {
+                    btne.dataTransfer.setData("Text", btne.target.id)
+                    console.log(btne.target.id);
+                });
+            });
+            dropzone.addEventListener("dragover", cal =>{
+                cal.preventDefault();
+            });
+            dropzone.addEventListener("drop",drops => {
+                const id = drops.dataTransfer.getData("Text");
+                const elements = document.getElementById(id);
+                drops.target.appendChild(elements);
+            });
+    </script>
+</body>
+</html>
